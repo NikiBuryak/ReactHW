@@ -1,18 +1,31 @@
-import { NewsText } from './NewsText';
-import *as news from './news.json'
+import { Component } from "react";
 
-function App() {
-  const newsText = news.default;
+class App extends Component {
+  
+  state={
+    isOpen:false,
+  }
+  onButtonClick =(e) =>{
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+  render(){
   return (
-    <div>
-        {newsText.map((el, i)=>{ 
-         return( <div key = {el.id}>
-            <NewsText key = {i} elements={el}/>
-         </div> )
-        })
-        }
+    <div className="filter">
+        {/* <button onClick={this.onButtonClick} 
+        className="button">Open Me</button>
+        {
+          this.state.isOpen && <div>
+               <input type="text" name="filter"></input>
+          </div>
+        } */}
+
+        
+
     </div>
   );
+}
 }
 
 export default App;
